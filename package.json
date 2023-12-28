@@ -1,0 +1,59 @@
+{
+  "name": "test-generator",
+  "version": "1.0.0",
+  "description": "A service designed to generate tests and run tests with GPT",
+  "main": "main.ts",
+  "scripts": {
+    "test:add": "ts-node main.ts --generate-test",
+    "test:run": "ts-node main.ts --run-test",
+    "test": "echo \"Still in development\" && exit 0",
+    "lint": "eslint . --ext .ts",
+    "lint:fix": "npm run lint -- --fix",
+    "fix:format": "prettier . --write",
+    "lint:format": "prettier . --check",
+    "prepare": "[ -d '.husky' ] && husky install || exit 0",
+    "pre-commit": "lint-staged"
+  },
+  "author": "Ha!",
+  "license": "ISC",
+  "engines": {
+    "node": "^20",
+    "npm": "^9"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^18.4.3",
+    "@commitlint/config-conventional": "^18.4.3",
+    "@cucumber/messages": "^24.0.1",
+    "@types/node": "^20.10.5",
+    "@types/uuid": "^9.0.7",
+    "@typescript-eslint/eslint-plugin": "^6.16.0",
+    "@typescript-eslint/parser": "^6.16.0",
+    "dotenv": "^16.3.1",
+    "eslint": "^8.56.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^15.2.0",
+    "prettier": "3.1.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "@cucumber/gherkin": "^27.0.0",
+    "@inquirer/editor": "^1.2.13",
+    "@inquirer/input": "^1.2.14",
+    "@inquirer/select": "^1.3.1",
+    "@playwright/test": "^1.40.1",
+    "@zerostep/playwright": "^0.1.5",
+    "auto-playwright": "^1.14.0",
+    "axios": "^1.6.3",
+    "commander": "^11.1.0",
+    "langchain": "^0.0.212",
+    "openai": "^4.24.1",
+    "uuid": "^9.0.1",
+    "zod": "^3.22.4"
+  },
+  "lint-staged": {
+    "**/*.{ts}": [
+      "eslint --fix"
+    ]
+  }
+}

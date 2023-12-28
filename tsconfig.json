@@ -1,0 +1,29 @@
+{
+  "compilerOptions": {
+    "lib": ["ESNext"],
+    "moduleResolution": "node",
+    "module": "ESNEXT",
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "removeComments": true,
+    "sourceMap": true,
+    "target": "es2022",
+    "outDir": ".build",
+    "rootDir": "./",
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true,
+    "noImplicitAny": false,
+    "noImplicitReturns": true,
+    "noImplicitThis": true
+  },
+  "include": ["./**/*.ts", "src/**/*.d.ts"],
+  "exclude": ["node_modules/**/*", ".vscode/**/*"],
+  "ts-node": {
+    "files": true,
+    "compilerOptions": {
+      "module": "nodenext",
+      "moduleResolution": "node"
+    }
+  }
+}
