@@ -42,7 +42,9 @@ export const runTestGenerator = async () => {
       aiResponse = await generateTest(question, aiResponse.threadId)
     }
 
-    testSuite = parseGherkin(aiResponse.result)
+    testSuite = aiResponse.result.startsWith('Feature')
+      ? aiResponse.result
+      : parseGherkin(aiResponse.result)
 
     console.log('The test suite has been generated! Have a look at it:')
     console.log(separatorLine)

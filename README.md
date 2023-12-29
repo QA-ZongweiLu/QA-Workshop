@@ -6,12 +6,16 @@ This project is a prototype of an automated test assistant. It uses AI to genera
 
 1. Use `npm install` to install all dependencies
 2. This project uses openai API to generate test cases and run API tests. Therefore, you need to set `OPENAI_API_KEY` in your environment variables.
-
 ```bash
 export OPENAI_API_KEY="<your token here>"
 ```
 
-3. For Web UI testing, this project uses Zerostep. Therefore, you need to set `ZEROSTEP_TOKEN` in your environment variables.
+3. Also, This project requires a GPT model to generate test cases and run API tests. Therefore, you need to set `OPENAI_MODEL_NAME` in your environment variables. Currently, the only two models are supported: `gpt-3.5-turbo-1106` and `gpt-4-1106-preview`.
+```bash
+export OPENAI_MODEL_NAME="gpt-3.5-turbo-1106"
+```
+
+4. For Web UI testing, this project uses Zerostep. Therefore, you need to set `ZEROSTEP_TOKEN` in your environment variables.
 
 ```bash
 export ZEROSTEP_TOKEN="<your token here>"
